@@ -16,7 +16,8 @@ function changeColor() {
   body.style.backgroundColor = randomHex;
   
   // Verification: Open your browser's inspect tool (F12) to see this running
-  document.write(`Current Color: ${randomHex}`);
+  document.getElementById("greeting").textContent=`Hello, ${username}!
+  Current Color: ${randomHex}`;
 }
 
 btn.addEventListener('click', changeColor);
