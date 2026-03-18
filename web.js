@@ -1,23 +1,22 @@
-// Using your specific ID instead of a generic 'button'
-const myButton = document.getElementById('colorButton');
-const greeting = document.getElementById('greeting');
-
-// Use a default name if they hit cancel
-var userName = prompt("What’s Your Name?") || "Guest";
-
-// Use textContent for safety
-greeting.textContent = `Hello ${userName}!`;
-
-const body = document.body; // Shortcut!
-
-function changeColor() {
-  var colors = ['red', 'green', 'blue', 'yellow', 'pink', 'purple', 'violet', 'orange', 'cyan', 'magenta'];
-  
-
-  body.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
-}
-
+const body = document.body;
 const btn = document.getElementById('colorButton');
 
-// When the button is clicked, run the changeColor function
+function saveFunc(){
+  var username=document.getElementById('nameInput').value || 'Guest'
+document.getElementById('greeting').textContent = `Hello, ${username}!`
+}
+var saveButton=document.getElementById('saveName')
+saveButton.addEventListener('click', saveFunc)
+
+function changeColor() {
+  // Generates a random number between 0 and 16,777,215 (decimal for #FFFFFF)
+  // then converts it to a hex string and pads it with zeros if needed.
+  const randomHex = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+  
+  body.style.backgroundColor = randomHex;
+  
+  // Verification: Open your browser's inspect tool (F12) to see this running
+  console.log(`Current Color: ${randomHex}`);
+}
+
 btn.addEventListener('click', changeColor);
