@@ -1,7 +1,24 @@
   .top{
-  padding-top: 100px;
   text-align: center;
   }
+  .input-group {
+  margin-bottom: 20px;
+  padding-top: 110px
+}
+#nameInput {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #767676;
+  border-radius: 4px;
+}
+
+#saveName {
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 
 #colorButton {
   background-color: red;
